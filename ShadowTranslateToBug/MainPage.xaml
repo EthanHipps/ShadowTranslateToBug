@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShadowTranslateToBug.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <ContentPage.Resources>
+        <Style x:Key="BaseFabButton" TargetType="ImageButton">
+            <Setter Property="Aspect" Value="Center" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+            <!--<Setter Property="Shadow">
+                <Setter.Value>
+                    <Shadow Opacity="0.25" Offset="4,4" />
+                </Setter.Value>
+            </Setter>-->
+            <Setter Property="HorizontalOptions" Value="End" />
+        </Style>
+
+        <Style
+            x:Key="FabButton"
+            BasedOn="{StaticResource BaseFabButton}"
+            TargetType="ImageButton">
+            <Setter Property="CornerRadius" Value="16" />
+            <Setter Property="HeightRequest" Value="56" />
+            <Setter Property="WidthRequest" Value="56" />
+        </Style>
+
+        <Style
+            x:Key="SmallFabButton"
+            BasedOn="{StaticResource BaseFabButton}"
+            TargetType="ImageButton">
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="Margin" Value="0,0,0,16" />
+            <Setter Property="WidthRequest" Value="40" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="16">
+        <ImageButton
+            x:Name="SubAction4"
+            Source="close.png"
+            Style="{DynamicResource SmallFabButton}"
+            TranslationY="240" />
+
+        <ImageButton
+            x:Name="SubAction3"
+            Source="close.png"
+            Style="{DynamicResource SmallFabButton}"
+            TranslationY="184" />
+
+
+        <ImageButton
+            x:Name="SubAction2"
+            Source="close.png"
+            Style="{DynamicResource SmallFabButton}"
+            TranslationY="128" />
+
+
+        <ImageButton
+            x:Name="SubAction1"
+            Margin="0,0,0,24"
+            Source="close.png"
+            Style="{DynamicResource SmallFabButton}"
+            TranslationY="72">
+            <!--<ImageButton.Shadow>
+                <Shadow Opacity="0.25" Offset="4,4" />
+            </ImageButton.Shadow>-->
+        </ImageButton>
+
+
+        <ImageButton
+            Clicked="OnActionsMenuButtonClickedAsync"
+            HorizontalOptions="End"
+            Source="close.png"
+            Style="{DynamicResource FabButton}" />
+    </VerticalStackLayout>
+</ContentPage>
